@@ -81,11 +81,11 @@ def correct(sudoku, num, pos):
             return False
 
     # Check that there aren't any duplicates in 3x3 square
-    current_box = pos[1] // 3
-    current_box_height = pos[0] // 3
+    current_box_column = pos[1] // 3
+    current_box_row = pos[0] // 3
 
-    for i in range(current_box_height * 3, current_box_height * 3 + 3):
-        for j in range(current_box * 3, current_box * 3 + 3):
+    for i in range(current_box_row * 3, current_box_row * 3 + 3):
+        for j in range(current_box_column * 3, current_box_column * 3 + 3):
             # If there are duplicates (excluding last position), return false
             if sudoku[i][j] == num and (i, j) != pos:
                 return False
